@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --Hero-Bacground: #23475b;
+    --Hero-Color-Text: white;
+    --Hero-Font-Family: 'Lato', sans-serif;
+
+    --Badge-Img-Max-Width: 4rem;
+    
+    --Title-Font-Size: 2rem;
+
+    --Form-Background-color: rgba(255,255,255,.9);
+    --Form-Padding: 1.5rem;
+    --Form-Width: 20rem;
+
+    --Input-Width: 100%;
+    --Input-Padding: 0.6rem;
+    --Input-Font-Size: 1rem;
+    --Input-Margin-Bottom: 0.6rem;
+    --Input-Border-color: #dbdbe2;
+
+    --Form-Title-color: #3a3b3f;
+    --Form-Title-Font-Size: 1.2rem;
+    --Form-Title-Margin-Bottom: 1rem;
+
+    --Buttom-Background-color: #98ca3f;
+    --Buttom-Color-Text: white;
+    --Button-Font-Size: 1rem;
+    --Buttom-Border-color: #6d932b;
+
+    --Countdown-Title-Font-Size: 1.2rem;
+    --Countdown-Title-Margin-bottom: 0.6rem;
+
+    --Countdown-Span-Font-Size: 2rem;
+
+}
+
+
+.hero{
+    background-color: var(--Hero-Bacground);
+    color: var(--Hero-Color-Text);
+    padding: 2rem 1rem;
+    font-family: var(--Hero-Font-Family);
+    
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 70px 1fr 320px;
+    grid-gap: 10px;
+
+    grid-template-areas: "Logo Title form"
+                         ".  Descrpcion form"
+                         ".  countdown form"
+
+}
+
+.badge{
+    grid-area: Logo;
+}
+
+.badge img{
+  
+    max-width: var(--Badge-Img-Max-Width);
+}
+
+.title{
+    grid-area: Title;
+
+}
+
+.description{
+    grid-area: Descrpcion;
+}
+
+.form{
+    grid-area: form;
+}
+
+.countdown {
+    grid-area: countdown;
+}
+
+.badge img {
+    
+} 
+
+
+
+.title{
+    font-size: var(--Title-Font-Size);
+    font-weight: normal;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form{
+ 
+    text-align: center;
+    background-color: var(--Form-Background-color);
+    padding: var(--Form-Padding);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    width: var(--Form-Width);
+   
+}
+
+.Form-title{
+    color: var(--Form-Title-color);
+    font-size: var(--Form-Title-Font-Size);
+    margin-bottom: var(--Form-Title-Margin-Bottom);
+}
+
+.Input{
+    width: var(--Input-Width);
+    padding: var(--Input-Padding);
+    font-size: var(--Input-Font-Size);
+    border: 1px solid var(--Input-Border-color);
+    border-radius: 5px;
+    margin-bottom: var(--Input-Margin-Bottom);
+}
+
+.Buttom{
+    background-color: var(--Buttom-Background-color);
+    color: var(--Buttom-Color-Text);
+    font-size: var(--Button-Font-Size);
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 3px solid var(--Buttom-Border-color);
+}
+
+.countdown p {
+    font-size: var(--Countdown-Title-Font-Size);
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: var(--Countdown-Title-Margin-bottom);
+}
+
+.countdown span {
+    font-size: var(--Countdown-Span-Font-Size);
+}
+
+.countdown span:after {
+    content: ":";
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.countdown span:last-child:after{
+    content: "";
+}
+
+@media screen and (max-width: 768px){
+
+    :root{
+        --Form-Width: 100%;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        grid-gap: 10px;
+    
+        grid-template-areas: "Logo Title"
+                             "Descrpcion Descrpcion"
+                             "form  form"
+                             "countdown  countdown"
+    
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        grid-gap: 10px;
+    
+        grid-template-areas: "Logo Title"
+                             "Descrpcion Descrpcion"
+                             "form  form"
+                             "countdown  countdown"
+    
+    }
+}
+
+@media screen and (max-width: 320px){
+
+    :root{
+        --Badge-Img-Max-Width: 4rem;
+        --Title-Font-Size: 1.5rem;
+        --Countdown-Span-Font-Size: 1.5rem;
+
+    }
+
+    .description{
+        text-align: center;
+    }
+
+}
